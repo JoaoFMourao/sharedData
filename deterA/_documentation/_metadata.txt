@@ -1,0 +1,44 @@
+# DETER [DETECCAO DO DESMATAMENTO EM TEMPO REAL] - CLOUDS
+# content: cloud coverage (spatial polygons data frame); Brazilian Legal Amazon (extent); monthly (frequency -- data generated daily, but made       >
+#          publicly available as monthly aggregates); MAY/2004 through present (period of reference -- but incomplete records for 2004/2005)
+# source: Brazilian Institute for Space Research (INPE) 
+# available at: http://www1.dpi.inpe.br/obt/deter/dados/
+# raw data downloaded on: JUN/07/2016 (clouds); AUG/16/2017 (alerts) [2004 through 2015 data]; FEB/21/2018 (clouds and alerts) [2016 data]
+# web archive link: https://web.archive.org/web/20200203030335/http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/deter/deter (main page only)
+# CRS: varies over time -- clarified with INPE (see documentation for details)
+#   > 2006 through 2010:         LongLat (coordinate system), SAD69 (datum),         not projected   [SAD69longlat]
+#   > 2011 through JUL/2015:     LongLat (coordinate system), SAD69_pre96BR (datum), not projected   [SAD69longlat_pre96BR]
+#   > AUG/2015 through DEC/2016: LongLat (coordinate system), SIRGAS2000 (datum),    not projected   [SIRGAS2000longlat]
+
+
+# DETER [DETECCAO DO DESMATAMENTO EM TEMPO REAL] - ALERTS
+# content: deforestation/degradation hotspots (spatial polygons data frame); Brazilian Legal Amazon (extent); monthly (frequency -- data generated   >
+#          daily, but made publicly available as monthly aggregates); MAY/2004 through present (period of reference -- but incomplete records for    >
+#          2004/2005)
+# source: Brazilian Institute for Space Research (INPE) 
+# available at: http://www1.dpi.inpe.br/obt/deter/dados/
+# raw data downloaded on: JUN/07/2016 (clouds); AUG/16/2017 (alerts) [2004 through 2015 data]; FEB/21/2018 (clouds and alerts) [2016 data]
+# web archive link: https://web.archive.org/web/20200203030335/http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/deter/deter (main page only)
+# CRS: varies over time -- clarified with INPE (see documentation for details)
+#   > 2006 through 2010:         LongLat (coordinate system), SAD69 (datum),         not projected   [SAD69longlat]
+#   > 2011 through JUL/2015:     LongLat (coordinate system), SAD69_pre96BR (datum), not projected   [SAD69longlat_pre96BR]
+#   > AUG/2015 through DEC/2016: LongLat (coordinate system), SIRGAS2000 (datum),    not projected   [SIRGAS2000longlat]
+
+
+# obs: manual edits to input directory
+#   > JUL/2010 data duplicated in original source (under names 'nuvem' and 'nuvens') -- excluded folder named 'nuvem' for consistency with other 2010 cloud directories
+#   > changed layer names for MAR/2009 and MAR/2010 from MAR¢O to MARCO
+#   > corrected typo in NOV/2008 folder name -- originally named 2009, but in 2008 online data repository
+#   > corrected typo in DEC/2012 folder name -- _sjp (instead of _shp) in online data repository
+#   > corrected capitalization mismatch across dbf/shp/shx file names for alert layers (several occurrences throughout)
+#   > manually deleted "surplus" downladed data: (i) spr and tif files in 2004/2005 and (ii) extra layers in SEP/2011 alert 
+#   > manually corrected layer name for JAN/2016 from "props" to "pol"
+
+# INSTRUCTIONS FOR DOWNLOAD (MANUALLY BUT IT IS POSSIBLE TO AUTOMATIZE)
+# 1) insert the url "http://www1.dpi.inpe.br/obt/deter/dados/" on the browser
+# 2) for each folder with pattern "YYYY" from 2004 through 2016:
+#	2.0) create the same "YYYY" folder pattern inside "data\raw2clean\land_cover\deter_inpe\input" 
+# 	2.1) enter in the folder
+#	2.2) download each zip file with pattern "Deter_YYYYMM_shp.zip" and "Nuvem_YYYYMM_shp.zip" (or "Nuvens_YYYYMM_shp.zip")
+#	2.3) unzip each downloaded folder
+# 3) follow the instructions above for manual edits to input directory

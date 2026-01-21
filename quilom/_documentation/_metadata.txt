@@ -1,0 +1,9 @@
+# QUILOMBOLA COMMUNITIES
+# files: pattern 'Áreas de Quilombolas'
+# content: quilombola communities (polygons data frame), Brazil (extent), SEP/16/2020 (date of reference)
+# source: INCRA (Instituto Nacional de Colonizacao e Reforma Agraria) - Acervo Fundiario
+# available at: http://acervofundiario.incra.gov.br/acervo/acv.php (click on "DOWNLOAD DE SHAPEFILE", then "Áreas de Quilombolas")
+# raw data downloaded on: SEP/16/2020
+# CRS: LongLat (coordinate system), SIRGAS2000(datum), not projected
+# Obs.: concerning reference date - according to INCRA (See e-mail from Andre Freddo on thursday 04/12/2018 at 11:42): "a informação vetorial dos assentamentos é gerada 
+# no momento da solicitação tendo como base um banco de dados geográfico que é atualizado constantemente."

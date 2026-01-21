@@ -1,0 +1,39 @@
+# BRAZILIAN PROTECTED AREAS
+# The link to download the data seems to have changed from https://dados.gov.br/dados/conjuntos-dados/unidadesdeconservacao to the new link in
+# "available at" bellow
+# content: protected areas ["unidades de conservacao"] (polygons data frame), Brazil (extent), 2020 (year of reference)
+# source: Cadastro Nacional de Unidades de Conservacao (CNUC) / Ministerio do Meio Ambiente (MMA)
+
+The data was cataloged on 29/11/2024, as indicated in the link description.
+
+# This new dataset features columns with improved names and formatting. Additionally, detailed metadata is available in an Excel file named #"descricao_campos", located in the directory A:\propertyRights\protec_Areas\rawData\2024-10.
+
+# Compared to the previous version, this new dataset contains 1,027 additional observations, 193 of which were imported from a specialized shapefile named # shp_cnuc_2024_10_pt. As the name suggests, the geometries in this shapefile are points, which are suspected to represent the centroids of the respective # UC areas (this still needs verification).
+
+# The other shapefile, shp_cnuc_2024_10_pol.shp, retains the same general structure as the previous version, but with improved column names and #formatting, as previously mentioned, and now it has the CRS.
+
+# available at: https://dados.gov.br/dados/conjuntos-dados/unidadesdeconservacao > recursos > Polígono CNuC 2024_10
+#
+# raw data downloaded on: JAN/13/2025
+# raw data archived on: A:\propertyRights\protec_Areas\rawData\2024-10
+# CRS: Coordinate Reference System:
+  User input: SIRGAS 2000 
+  wkt:
+GEOGCRS["SIRGAS 2000",
+    DATUM["Sistema de Referencia Geocentrico para las AmericaS 2000",
+        ELLIPSOID["GRS 1980",6378137,298.257222101,
+            LENGTHUNIT["metre",1]]],
+    PRIMEM["Greenwich",0,
+        ANGLEUNIT["degree",0.0174532925199433]],
+    CS[ellipsoidal,2],
+        AXIS["geodetic latitude (Lat)",north,
+            ORDER[1],
+            ANGLEUNIT["degree",0.0174532925199433]],
+        AXIS["geodetic longitude (Lon)",east,
+            ORDER[2],
+            ANGLEUNIT["degree",0.0174532925199433]],
+    USAGE[
+        SCOPE["Horizontal component of 3D system."],
+        AREA["Latin America - Central America and South America - onshore and offshore. Brazil - onshore and offshore."],
+        BBOX[-59.87,-122.19,32.72,-25.28]],
+    ID["EPSG",4674]]

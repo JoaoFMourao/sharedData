@@ -1,0 +1,15 @@
+This database was first sent by André Carvalho on November 11th, 2021.
+
+Current version of this dataset is from November 11th, 2021.
+
+Downloaded from (possibly the link is no longer working):
+http://terrabrasilis.dpi.inpe.br/geoserver/deter-amz/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=deter-amz%3Adeter_degradations&outputFormat=SHAPE-ZIP
+
+
+Description:
+
+This database contains the cumulated history of Deter B degradation alerts starting on August 2020.
+As opposed to the publicly available data in TerraBrasilis, these degradation alerts are not reclassified to Clear Cut Deforestation alerts if degradation converst to deforestation.
+This allows us to trace the history of all degradation alerts for a given area, regardless of whether it is converted to deforestation or not.
+
+

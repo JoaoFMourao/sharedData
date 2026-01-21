@@ -1,0 +1,47 @@
+-------------- Metadados ---------------
+
+abrangência: Brasil
+escala: multi-escala
+
+'gid - id do imóvel
+table_source - origem do dado
+
+ownership_class - terras públicas ou privadas:
+		PL - Terra Privada
+		PC - Terra Pública
+		NP - Não processado
+
+sub_class - sub classes de categorias fundiárias:
++------------------------------------------------------------------+
+| classe |                        descrição                        |
+|------+--------+--------------------------------------------------+
+|  AG    | Corpos d''água                                          |
+|  ARU   | Assentamentos Rurais                                    |
+|  CARpr | CAR premium                                             |
+|  CARpo | CAR poor                                                |
+|  COM   | Território Comunitário                                  |
+|  ML    | Área Militar                                            |
+|  ND_B  | Florestas públicas não desinadas                        |
+|  ND_I  | Imóveis públicos registrados no SIGEF/SNCI              |
+|  QL    | Território Quilombola                                   | 
+|  SIGEF | Imóveis privados registrados nos sistemas SIGEF/SNCI    |
+|  TI_H  | Território Indígena homologado                          |
+|  TI_N  | Território Indígena não homologado                      |
+|  TLPC  | Terras não destinadas do Programa Terra Legal           |
+|  TLPL  | Terra Legal Titulado                                    |
+|  TRANS | Malha de Transportes                                    |
+|  UCPI  | Unidade de Conservação de Produção Integral             |
+|  UCUS  | Unidade de Conservação de Uso Sustentável               |
+|  URB   | Áreas Urbanas                                           |
++-----+--------+---------------------------------------------------+
+area_original - área orginal antes do processamento de limpeza de sobreposição
+
+original_gid -  id original do imóvel antes do processamento de limpeza de sobreposição
+
+area - área final após o processamento de limpeza de sobreposição
+
+xxxx_area_loss - área que o imóvel perdeu para a determinada categoria (xxxx -> vide sub_class)
+
+cd_mun - geocódigo do IBGE por município
+
+cd_mun_contain - se o município está com geocódigo do IBGE (boolean)

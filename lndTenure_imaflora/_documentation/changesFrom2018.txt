@@ -1,0 +1,10 @@
+Documenting changes noted trough the process of using the data.
+
+This document does not have the intention to be a complete desciption of the changes in the structure of the data.
+
+#1) The class category used to be:
+	- Terra Privada (private land)
+	- Terra Pública (Public land)
+	- Urbano, agua e transporte. (urban water and transport)
+
+	#however, now it replaces the third class by "Não Processado" (non processed)

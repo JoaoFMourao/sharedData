@@ -1,0 +1,13 @@
+
+# METADATA
+#
+# PUBLIC FORESTS
+# files: shapefiles by state with public forest polygons 
+# content: brazilian public forests (polygons data frame); Brazil (extent); updated in 2017
+# source: SFB (Serviço Florestal Brasileiro)
+# available at: https://www.gov.br/agricultura/pt-br/assuntos/servico-florestal-brasileiro/cadastro-nacional-de-florestas-publicas
+# raw data downloaded on: MAY/25/2018
+# CRS:  LongLat (coordinate system), SIRGAS2000(datum), not projected
+
+# Comments
+# 1: According to Paulo Moutinho, public forests in this data often intersect with Indigenous Lands and other protected areas. We need to account for this.

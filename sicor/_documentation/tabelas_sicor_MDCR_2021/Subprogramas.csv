@@ -1,0 +1,65 @@
+#CODIGO_SUBPROGRAMA;DESCRICAO_SUBPROGRAMA;VL_TAXA_JUROS;CODIGO_PROGRAMA
+0063;Financiamentos com Recursos da Poupança Rural;6.00;0156
+0003;Agroindústria (investimento);4.00;0001
+0004;Floresta;2.75;0001
+0005;Semiárido;2.75;0001
+0006;Jovem;2.75;0001
+0007;Cotas Partes;4.00;0001
+0008;Agroecologia;2.75;0001
+0052;Eco (Energia renovável e sustentabilidade ambiental);4.00;0001
+0053;Agroindústria;4.00;0001
+0054;Reforma agrária;4.00;0001
+0055;Reforma agrária (microcrédito);4.00;0001
+0056;Microcrédito;4.00;0001
+0057;Mulher;4.00;0001
+0001;Custeio;4.60;0001
+0002;Mais Alimentos;4.00;0001
+0010;Financiamento (custeio, investimento e comercialização);6.00;0070
+0011;Estocagem;6.00;0070
+0012;Aquisição de Café (FAC);6.75;0070
+0013;Contratos de Opções e de Mercados Futuros;6.00;0070
+0014;Capital de Giro p Indústrias Café Solúvel Torrefação;6.75;0070
+0015;Recuperação de Cafezais Danificados;6.00;0070
+0016;Composição de Dívidas;6.00;0070
+0017;Controle da Doença Vassoura de Bruxa;4.00;0100
+0018;Enxertia de Cacaueiros Tolerantes;4.00;0100
+0019;Recomposição de Estande;4.00;0100
+0020;Investimentos Fixos e Semifixos;6.75;0110
+0021;Aquisição de Glebas de Terras;6.75;0110
+0022;Despesas de Custeio e Adicional do Proagro;6.75;0110
+0023;Integralização Cotas-Partes Capital Social Cooperativas;7.00;0151
+0024;Capital de Giro para Cooperativas;7.00;0151
+0025;Construção e Ampliação da Capacidade de Armazenagem;8.75;0152
+0026;Aquisição e Reforma de Sistemas de Irrigação;6.00;0152
+0027;Recuperação de Solos;6.00;0153
+0028;Fomentação Prod, Benef, Industr, Acond e Armaz;6.00;0153
+0030;Aquis Tratores, Colheitadeiras e Implem Associados Novos;7.50;0154
+0031;Aquis Tratores, Colheitadeiras e Implem Associados Usados;7.50;0154
+0032;Recuperação de Pastagens;6.00;0156
+0033;Sistemas Orgânicos;6.00;0156
+0034;Plantio Direto;6.00;0156
+0035;Integração Lavoura-Pecuária-Floresta e Sist Agroflorestais;6.00;0156
+0036;Florestas;6.00;0156
+0037;Adequação e/ou Regularização Ambiental;6.00;0156
+0038;Tratamento de Dejetos;6.00;0156
+0039;Dendê;6.00;0156
+0040;Fixação Biológica de Nitrogênio;6.00;0156
+0041;Ampliação e/ou Modernização de Armazéns Existentes;6.00;0163
+0042;Construção de Armazéns Novos;6.00;0163
+0043;Plantio Direto;8.83;0180
+0044;Recuperação de Pastagens;8.83;0180
+0045;Integração Lavoura-Pecuária-Floresta-Sist Agroflorestais;8.83;0180
+0046;Florestas;8.83;0180
+0047;Tratamento de Dejetos e Resíduos;8.83;0180
+0048;Fixação Biológica de Nitrogênio;8.83;0180
+0049;Consolidação da Agricultura Familiar;4.00;0201
+0050;Combate a Pobreza Rural;4.00;0201
+0051;Nossa Primeira Terra;4.00;0201
+0058;Financiamentos com Recursos dos Fundos Constitucionais;6.00;0156
+0009;Produtivo Orientado;2.75;0001
+0060;PRONAMP;6.00;0001
+0062;Açaí, Cacau, Oliveira, Nogueira (MCR 13-7-1-c-X);6.00;0156
+0059;Produção em Ambiente Protegido;6.00;0152
+0064;Construção e Ampliação de Instalações;6.00;0153
+9999;FGPP - Res. 4801, Art 2;6.00;0001
+0029;Fomentação de Ações de Defesa Animal;6.00;0153

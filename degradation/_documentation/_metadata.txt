@@ -1,0 +1,19 @@
+# DEGRAD
+# files: one folder per year containing the shapefiles with varying name patterns
+# content: information on degradation (polygons), Brazilian Legal Amazon (extent), annual (2007-2016)
+# source: INPE (Instituto Nacional de Pesquisas Espaciais) - OBT (Coordenacao-Geral de Observacao da Terra)
+# available at: http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/degrad/acesso-ao-dados-do-degrad
+# raw data downloaded on: AUG/07/2019 
+# web archived at: 
+# [2007] https://web.archive.org/web/20201026171805/http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/degrad/arquivos/degrad2007_final_shp.zip
+# [2008] https://web.archive.org/web/20201026172201/http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/degrad/arquivos/degrad2008_final_shp.zip
+# [2009] https://web.archive.org/web/20201026172237/http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/degrad/arquivos/degrad2009_final_shp.zip
+# [2010] https://web.archive.org/web/20201026172400/http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/degrad/arquivos/degrad2010_final_shp.zip
+# [2011] https://web.archive.org/web/20201026172430/http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/degrad/arquivos/degrad2011_final_shp.zip
+# [2012] https://web.archive.org/web/20201026172631/http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/degrad/arquivos/degrad2012_final_shp.zip
+# [2013] https://web.archive.org/web/20201026172700/http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/degrad/arquivos/degrad2013_final_shp.zip
+# [2014] https://web.archive.org/web/20201026172739/http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/degrad/arquivos/degrad2014_final_shp.zip
+# [2015] https://web.archive.org/web/20201026172814/http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/degrad/arquivos/degrad2015_final_shp.zip
+# [2016] https://web.archive.org/web/20201026172854/http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/degrad/arquivos/degrad2016_final_shp.zip
+# raw data archived on: OCT/26/2020
+# CRS: NA for 2007-2009 (assumed SAD60longlat_pre96BR after an email exchange with INPE) and SAD69longlat_pre96BR for 2010-2016, not projected

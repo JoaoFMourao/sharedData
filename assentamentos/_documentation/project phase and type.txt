@@ -1,0 +1,42 @@
+PROJECT_PHASE
+
+Fases de Implementação dos Assentamentos 
+(fonte: PORTARIA MDA no. 80 de 24/04/2002)
+
+0: em obtenção:
+
+1: pré-projeto de assentamento: Fase em que os imóveis já se encontram selecionados e decretados para a desapropriação, ou pré-selecionados para a aquisição pelos programas de crédito fundiário, sendo preparados sob os aspectos técnicos e  jurídicos para receber as famílias classificadas como pré-assentados selecionados para projetos em elaboração;
+
+2: assentamento em criação: Aquele cuja clientela encontra-se já selecionada pelos programas de acesso à terra, aguardando a elaboração da Relação do Beneficiário-RB, para ser assentada em imóvel já devidamente identificado, em vias de desapropriação, arrecadação ou aquisição, cujos cadastros estejam disponíveis nos bancos de dados de identificação do INCRA (SIPRA); BT (SIBT) PCPR (SICPR);
+
+3: assentamento criado: Imóvel já sob o domínio ou posse do INCRA, na condição permissiva de ingresso das famílias selecionadas, para o processo de legitimação das mesmas, com a assinatura de respectivos contratos de assentamento;
+
+4: assentamento em instalação: Projeto criado, cujos beneficiários encontram-se em instalação no imóvel, na fase de construção do Plano de Desenvolvimento do Assentamento - PDA, de natureza obrigatoriamente participativa, com a concessão dos créditos de apoio à instalação;
+
+5: assentamento em estruturação: Aquele em que se inicia a fase de implantação de infra-estrutura básica: abastecimento de água; eletrificação rural, estradas vicinais e edificação de moradias;
+
+6: assentamento em consolidação: Aquele cujos beneficiários já se encontram instalados, com dotação de infra-estrutura básica, e acesso ao PRONAF-A, estando em fase de titulação definitiva, cujas famílias já possuem condições socioeconômicas de migrar para as outras linhas de financiamento do Programa de Fortalecimento da Agricultura Familiar - PRONAF;
+
+7: assentamento consolidado: Aquele que tenha mais da metade das famílias beneficiárias da concessão de título definitivo de propriedade, estando em fase de transferência de áreas ou imóveis remanescentes, ao Município ou Estado (Núcleos urbanos, etc.).
+
+8: assentamento cancelado
+
+9: assentamento revogado
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+PROJECT_TYPE
+
+(are there others? classification strategy?)
+
+PA : Projeto de Assentamento Federal 
+PAE: Projeto de Assentamento Agroextrativista
+PDS: Projeto de Desenvolvimento Sustentável
+PAR: Projeto de Reassentamento Rápido
+PC : Projeto de Colonização
+PCA: Projeto de Assentamento Casulo 
+PCT: Programa Nacional de Crédito Fundiário (antigo Programa Cédula da Terra)
+PIC: Projeto Integrados de Colonização
+PRB: Reassentamento de Barragem

@@ -1,0 +1,52 @@
+CAR GEOSERVER 
+# content: SICAR DATA  
+# source:  Geoserver
+# available at: https://geoserver.car.gov.br/geoserver/web/wicket/bookmarkable/org.geoserver.web.demo.MapPreviewPage?1&filter=false
+# raw data downloaded on: 2023-11-08
+# archive at: /web/20240326172617/https://geoserver.car.gov.br/geoserver/web/wicket/bookmarkable/org.geoserver.web.demo.MapPreviewPage?1&filter=false
+# web archived on: 2024-03-26
+#
+### CODE ###
+#
+# In "A:\propertyRights\CAR_Geoserver\code" you will find 3 code files. They are: 
+#
+# 1) 01_r2c_car_geoserver.Rdata
+#
+#	- This code is a first cleaning proccess of the raw data, in which all the data is downloaded in a repository for each state and there is a small cleaning as well.
+#
+#
+# 2) 02_car_muni.Rdata
+# 
+# 
+# 	- This code loads the SICAR clean data and does the intersection with municipalities` boundries. This include: 
+#             - Crossing with municipalities 
+#              - Adjust CRS 
+#             - Organize final data in municipality-chunck data 
+
+# 3) 03_add_biome_info_sicar.Rdata
+#
+#  	- This code crosses the previous base (from step 2) with biome boundaries. 
+#       - it also calculates the % of each CAR that is in each biome 
+#       - Finally, the code drops the geometry of the base and puts all the information in one single base (that's going to be merged later on in another code from the car-
+#         car project) 
+# 
+#
+#
+#### DATA #### 
+# 
+## RAW_DATA ## 
+#  
+#     - Sicar data just as download divided in big chuncks
+# 
+## CLEAN_DATA ## 
+#     - SICAR base after download and basic cleaning, divided in big chuncks
+#
+## BUILT_MUNI ## 
+##
+#      - Clean Sicar base crossed with municipalities and paralelized for municipality-chunck
+# 
+#          - Inside this directory, there's a directory called "car_biome" 
+#                - The data in this directory is the same as the data described just above, but it has biome information for each CAR. 
+#                - So this base represents the clean Sicar base crossed with municipalities and with biomes. 
+# 
+#

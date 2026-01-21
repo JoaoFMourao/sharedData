@@ -1,0 +1,35 @@
+#LAND USE
+#1) 
+- Files: pattern 'TC_AMZ_YearOfReferece'
+- Content: categorized land use (in raster format) (polygons data frame), Legal Amazon (extent).
+- Available years: 2004,2008,2010,2012,2014 and 2020.
+
+- Source: TerraClass Project 
+- Available at: http://terrabrasilis.dpi.inpe.br/geonetwork/srv/eng/catalog.search#/metadata/f49a47f8-12ae-4052-8e0d-2e581458dc69 # Year 2020
+                https://www.terraclass.gov.br/geoportal-aml/ # 2004-2014
+
+
+#2) 
+	For the year 2020 we have a legend that lists: type of area, coloring on the map and value assigned to the raster cell. 
+        However, for previous years, we only have the relationship: type of area and coloring on the map. 
+	The subtitles have been added to the documentation folder.
+
+
+#3) For any TerraClass year different than 2020:
+
+# Land Use Legenda color-value caption
+value="1"  -  color="#005500"/>   LAND USE 2020 COLOR/CATEGORY ASSOCIATION: VEGETACAO NATURAL FLORESTAL PRIMARIA #005500
+value="2"  -  color="#0fc80f"/>   LAND USE 2020 COLOR/CATEGORY ASSOCIATION: VEGETACAO NATURAL FLORESTAL SECUNDARIA #0fc80f
+value="3"  -  color="#a8a800"/>   LAND USE 2020 COLOR/CATEGORY ASSOCIATION: SILVICULTURA #a8a800
+value="4"  -  color="#e6a04b"/>   LAND USE 2020 COLOR/CATEGORY ASSOCIATION: PASTAGEM ARBUSTIVA/ARBOREA #e6a04b
+value="5"  -  color="#ffec87"/>   LAND USE 2020 COLOR/CATEGORY ASSOCIATION: PASTAGEM HERBACEA #ffec87
+value="6"  -  color="#ff8828"/>   LAND USE 2020 COLOR/CATEGORY ASSOCIATION: CULTURA AGRICOLA PERENE #ff8828
+value="7"  -  color="#996400"/>   LAND USE 2020 COLOR/CATEGORY ASSOCIATION: CULTURA AGRICOLA SEMIPERENE #996400
+value="8"  -  color="#ffff00"/>   LAND USE 2020 COLOR/CATEGORY ASSOCIATION: CULTURA AGRICOLA TEMPORARIA DE MAIS DE 1 CICLO #FFFF00
+value="9"  -  color="#ad89cd"/>   LAND USE 2020 COLOR/CATEGORY ASSOCIATION: MINERACAO #ad89cd
+value="10" -  color="#ffa8c0"/>   LAND USE 2020 COLOR/CATEGORY ASSOCIATION: URBANIZADA #ffa8c0
+value="11" -  color="#e1e1e1"/>   LAND USE 2020 COLOR/CATEGORY ASSOCIATION:
+value="12" -  color="#ffffff"/>   LAND USE 2020 COLOR/CATEGORY ASSOCIATION:
+value="13" -  color="#ff0000"/>   LAND USE 2020 COLOR/CATEGORY ASSOCIATION: DESFLORESTAMENTO NO ANO #ff0000
+value="14" -  color="#ff00ff"/>   LAND USE 2020 COLOR/CATEGORY ASSOCIATION: NAO FLORESTA #ff00ff
+value="15" -  color="#0000ff"/>   LAND USE 2020 COLOR/CATEGORY ASSOCIATION: CORPO DAGUA #0000ff

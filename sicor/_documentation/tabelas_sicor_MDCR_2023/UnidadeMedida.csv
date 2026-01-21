@@ -1,0 +1,33 @@
+#UNM_DS,UNM_SL,UNM_CD_TIPO_UNIDADE_MEDIDA,UNM_ID
+"Mil Pés","Mil Pés   ","Quantidade",1
+"Hectare","ha        ","Área",99
+"Tonelada","t         ","Massa",100
+"Mil Mudas","Mil Mudas ","Quantidade",101
+"Quilograma","kg        ","Massa",102
+"Mil Dúzias","Mil Dúzias","Quantidade",103
+"Metro Quadrado","m2        ","Área",104
+"Metro Cúbico","m3        ","Volume",105
+"Maço","Maço      ","Quantidade",106
+"Pés","Pés       ","Quantidade",107
+"Mil Unidades","Mil Unid  ","Quantidade",108
+"Unidade","Unidade   ","Quantidade",109
+"Hectolitro","hl        ","Volume",110
+"Litro","l         ","Volume",111
+"Galão","Gal       ","Volume",112
+"Lata","Lata      ","Volume",113
+"Caixa","Caixa     ","Quantidade",114
+"Pacote","Pacote    ","Quantidade",115
+"Arroba","Arroba    ","Massa",116
+"Cabeça","Cabeça    ","Quantidade",117
+"Mil Cabeças","Mil Cab   ","Quantidade",118
+"Mil Litros","Mil Litros","Volume",120
+"garrafa","garrafa   ","Quantidade",139
+"Dúzia","Dz        ","Quantidade",1050
+"Metro Cúbico de Tanque","m3 tanque ","Volume",2050
+"Saca de 60 Quilos","Sc        ","Massa",3050
+"Quilograma (Peso Vivo)","KGpv      ","Massa",3100
+"Mil Metros Quadrados de Aviário","Mil M2 av ","Área",3101
+"Mil Aves (Lote)","Mil Aves  ","Quantidade",4050
+"Quantidade","QTD       ","Quantidade",6050
+"Aves","Aves      ","Quantidade",8050
+"Hectare (lâmina d'água)","ha (agua) ","Área",402550

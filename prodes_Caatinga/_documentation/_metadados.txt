@@ -1,0 +1,42 @@
+PRODES INCREMENTS
+# content: Anual deforestation increments for the Caatinga Biome 
+# source:  Plataforma TerraBrasilisis - INPE 
+# available at: http://terrabrasilis.dpi.inpe.br/downloads/
+# raw data downloaded on: november/14/2023
+# archive at: https://web.archive.org/web/20231207193455/http://terrabrasilis.dpi.inpe.br/downloads/
+# web archived on: december/07/2023
+#
+### INSTRUCTIONS FOR DOWNLOAD ###
+# 
+# 1) insert the url http://terrabrasilis.dpi.inpe.br/downloads/
+# 2) On the web page, schroll down to: "Caatinga - PRODES (Desmatamento)"
+# 3) Select "Incremento anual no desmatamento - Shapefile (2008-2022)" 
+# 4) click "Download"
+#
+#
+### CODE ###
+#
+# In "A:\land\prodes_CaatingaBiome\code" you will find 3 code files. They are: 
+#
+# 1) 01_r2c_lcv_dfrst_caat_biome_prodes_inpe_sf.Rdata
+#
+#	- This code is a first cleaning proccess to the raw data, in which we: 
+# 		- Change variables names 
+# 		- Check and put every variable in its ideal class 
+# 		- Clean special characters 
+#
+# 2) 02_mrg_withCaatingaMuni.Rdata
+# 
+# 
+# 	- This code loads the Prodes clean data and crosses it with municipalities baundaries and paralelizes it for # 	each municipality 
+
+# 3) 03_crossCheck.Rdata
+#
+#  	- This code checks if the deforestation rates generated from the previous code matches with the reported 
+# 	deforestation rates by Prodes. 
+# 
+# 	OBS: Since we use a different CRS compared to the one used to calculate the reported deforestation rates, 
+# 	it is expected some degree of difference between the rates. You can check the results in: 
+# 	"A:\land\prodes_CaatingaBiome\cleanData\03_crossCheck.xlsx"
+#
+#

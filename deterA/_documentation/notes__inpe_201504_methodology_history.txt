@@ -1,0 +1,22 @@
+CONVERSA TELEFÔNICA 
+LUIS MAURANO (INPE)
+30/ABRIL/2015
+
+> dados públicos agregados por mês: http://www.obt.inpe.br/deter/dados/
+    - usar shapes com padrão ____AAAAMM, onde A é ano e M é mês -- esses são os agregados! ignorar os demais
+    - se não houver shape pro mês, supor cobertura de nuvem 100%
+
+> cronologia:
+    - 2004: produto MODIS como base -- mosaico quinzenal (composição de imagens diáris livres de nuvens... mas composição é prejudicial, pois trocam por pixel mais verde se há nuvem)
+    - 2006: imagem diária, mas quinzena composta por melhor imagem (melhor visibilidade) pro período -- mandava para Ibama quinzenalmente
+    - 2011: imagem+tratamento diários!! -- manda para Ibama td dia útil
+
+> tudo interpretado manualmente (no início, era misto, mas dava mt ruído)
+    - nuvens são processadas automaticamente, mas é tratamento grosseiro... o resto da área útil sai na mão
+
+> máscara PRODES: apenas o que NÃO está na máscara do PRODES é interpretado
+    - início do mês: Amazônia inteira coberta
+    - 1a imagem: libera o que está visível
+    - 2a imagem: libera nova área visível
+    - ... final do mês: resta apenas o que não liberou
+    - se mesma área puder ser vista em vários dias, ela é revisitada

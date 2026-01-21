@@ -1,0 +1,72 @@
+# RURAL SETTLEMENTS
+
+#1) 
+- Files: pattern 'Assentamento Brasil'
+- Content: rural settlements (polygons data frame), Brazil (extent), 
+
+- Source: INCRA (Instituto Nacional de Colonizacao e Reforma Agraria) - Acervo Fundiario
+- Available at: http://acervofundiario.incra.gov.br/acervo/acv.php (agora deve ser feito o login com o usuário do gov.br, click on "DOWNLOAD DE SHAPEFILE", then "Projetos de Assentamento Total")
+                outdated - https://antigo.incra.gov.br/pt/assentamentosmodalidades.html
+                outdated - https://www.gov.br/incra/pt-br/assuntos/reforma-agraria/assentamentos
+                outdated - https://www.gov.br/incra/pt-br/assuntos/reforma-agraria/assentamentos-relacao-de-
+projetos
+		https://certificacao.incra.gov.br/csv_shp/export_shp.py
+- Raw data downloaded on: SEP/16/2020
+- CRS: LongLat (coordinate system), SIRGAS2000(datum), not projected
+
+
+# Obs.1: readOGR for settlements (INCRA) informs the existence of some "NULL geometries" that, despite that, contain information about 
+#        refered settlement, however, does not contain spatial data.
+
+# Obs.2: concerning reference date - according to INCRA (See e-mail from Andre Freddo on thursday 04/12/2018 at 11:42): "a informação vetorial dos assentamentos é 
+#        gerada no momento da solicitação tendo como base um banco de dados geográfico que é atualizado constantemente."
+
+# Obs.3: There are repeated sipra codes but they have different geometries.
+
+#The database is such that each DOES NOT correspond to one settlement, but to one unit we are unsure of. All the observations with the same sipra_code correspond to the same settlement and can be united following this pattern:
+	- geometry -> The union of the geometries
+	- 
+
+
+#2)
+- Files: planilha_relacao_assentamentos
+- content: rural settlements (xlsx tabular data), Brazil coverage, 
+- Source: INCRA (Instituto Nacional de Colonização e Reforma Agrária) - Relação de projetos de assentamentos criados e reconhecidos pelo Incra em formato de planilha. 
+- Avaliable at: https://www.gov.br/incra/pt-br/assuntos/reforma-agraria/assentamentos-relacao-de-projetos
+
+- download instruction:
+	- Enter the link
+	- Click in "Relação de projetos de assentamentos criados e reconhecidos pelo Incra em formato de planilha"
+	- The download should start imediatly
+
+
+#3)
+- The observations categorized as 'RTQR TQ' are Quilombola Territories.
+
+
+#4) Version Control and Code Adaptation
+	- All the files in the rawData folder have the *download date* in the name, which is the last 8 numbers. This was done to make it easier to compare versions of the data provided 
+  	  by INCRA, which are undergoing recurrent changes.
+	- For this reason, every time you run the r2c or merge with municipalities codes, you need to change the *'reference.data'* parameter in the SETUP step of the codes 
+          by putting the same download date as the raw file. Example: Data downloaded on December 23, 2023, 'reference.data' = '20231223' 
+
+#5) Comparing Data
+	- The 'crosscheck' folder within the 'code' folder contains the code that compares versions of the settlement data with different download dates. It clarifies which areas
+	  are new or unique to each version. The results of this experiment are saved on the 'crosscheck' folder within the 'data' folder.
+
+#6) Codes:
+# In 'code', there are three scripts numbered in the order they should be executed. When updating the data, the only required 
+# modification is updating the reference.data variable to match the data download date, following the same format as the folder created in rawData.
+
+#    1) '01_cln_prp_lndTe_brl_settlements_spatial.R'
+#
+#       - Cleans the object containing the spatial data of the settlements.
+#
+#    2) '02_cln_prp_lndTe_brl_settlements_worksheet.R'
+#
+#       - Cleans the Excel file containing settlement information.
+#
+#    3) 03_cln_prp_lndTe_brl_settlements_incra_join.R
+#
+#       - Merges the shapefile and spreadsheet versions, preserving as many 
+#         settlements as possible to create a robust dataset

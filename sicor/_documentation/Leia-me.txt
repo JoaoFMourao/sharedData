@@ -1,0 +1,78 @@
+SICOR - Sistema de Operações do Crédito Rural e do Proagro
+Última atualização deste arquivo: 2024-10-16, por Wagner Oliveira
+Proprietários da pasta: Wagner Oliveira e Mariana Stussi
+
+- Descrição
+O SICOR é um registro de todas as operações de crédito rural e Proagro (Programa de Garantia de Atividade Agropecuária)
+ no Brasil. As bases principais são chamadas “SICOR_OPERACAO_BASICA_ESTADO_XXXX”, onde XXXX é o ano. Essas bases
+ contém o indexador da operação (ref_bacen e nu_ordem) e algumas informações básicas, incluindo o valor da operação.
+ Para encontrar informações adicionais como nome do Programa, Cultura, Atividade, etc, é preciso conectar a base
+ principal com as tabelas de domínio auxiliares, disponibilizadas na subpasta rawData/auxiliary, pois se trata de uma
+ base de dados relacional. É possível obter informações adicionais sobre os contratos de Proagro (uma espécie de
+ seguro para a operação de crédito), incluindo as indenizações e os eventos que geraram sinistro. Para mais
+ informações, consulte o manualDadosSicor_V6 (versão mais atual) na subpasta _documentation.
+
+Essa base de dados não possui informações que permitam identificar o tomador de crédito. As bases de dados
+ complementares permitem identificar algumas informações adicionais para o universo do crédito subsidiado
+ (cerca de 80% das operações e 45% do valor das operações). É possível obter, por exemplo, o município da operação,
+ o CPF do tomador de crédito, as coordenadas geodésicas do empreendimento. Para mais informações, consulte o
+ manualDadosComplementaresSicor_V9 (versão mais atual) na subpasta _documentation.
+
+OBS: Por conta da natureza relacional do SICOR, recomenda-se toda vez que uma nova extração for realizada,
+ baixar todos os arquivos da base e não só os que forem utilizar. Dado que a base está sempre em atualização,
+ utilizar a base principal de uma data com um auxiliar ou complemento baixado em outra data pode gerar
+ inconsistências. Para garantir a integridade das análises, devemos sempre utilizar as bases relacionadas
+ extraídas no mesmo dia. As bases de dados são atualizadas pelo Banco Central às quartas e aos sábados.
+
+- Fonte
+Banco Central do Brasil (BCB), Departamento de Crédito Rural e Proagro (DEROP): Tabelas do Crédito Rural e do Proagro.
+
+- Instruções para Download
+Dados brutos baixados aqui: https://www.bcb.gov.br/estabilidadefinanceira/tabelas-credito-rural-proagro
+Baixamos sempre os itens 1 (tabelas de domínio, auxiliares), 2 (dados gerais) e 3 (dados complementares).
+Armazenamos cada um desses itens separadamente em subpastas:
+1 - auxiliary
+2 - base
+3 - complement
+OBS2: Os dados que vem em formato .gz precisam ser descompactados para obter os arquivos com os dados.
+
+Dicionário (base): https://www.bcb.gov.br/htms/sicor/manualDadosSicor_V7.pdf
+Dicionário (complemento): https://www.bcb.gov.br/htms/sicor/manualDadosComplementaresSicor_V10.pdf
+
+- Extração Atual
+Download realizado em: 2024-10-16, por Wagner Oliveira (2013-2024)
+
+- Extrações Anteriores (subpasta 'rawData/old', com as pastas com as respectivas datas):
+--> 2024-04-24 (2013-2024), por Wagner Oliveira
+--> 2024-01-18 (2013-2023), por Marcelo Sessim
+--> 2023-08-02 (2013-2023), por Wagner Oliveira
+--> 2023-05-06 (2013-2022), por Wagner Oliveira
+OBS: os arquivos auxiliares correspondentes a cada extração estão em 'rawData/auxiliary/old'
+
+- IMPORTANTE: A base de dados é grande (~10GB), então recomenda-se manipulá-la em um dos servidores com maior capacidade
+de processamento e memória.
+
+- Tratamento
+
+ - 1_prepare_sicor_main.R
+
+ Script em R que lê os arquivos principais da base para os anos de 2013 ao ano mais recente e faz uma limpeza bem simples e agregação
+ para uma base única. A base gerada por esse código é a “sicor_main_2013_XXXX.Rds”, onde XXXX é o ano mais recente.
+
+ - 2_merge_empreendimento.R
+
+ Script em R que lê a base acima e adiciona algumas informações sobre as operações básicas que estão em uma tabela de
+ domínio auxiliar. A tabela "empreendimento" possui informações importantes para análise como: finalidade, atividade,
+ modalidade e produto. A base gerada por esse código é a “sicor_main_2013_XXXX_with_empreendimento.Rds”, onde XXXX é o ano mais recente.
+
+ - 3_merge_comp_basic.R
+
+ Script em R que lê a base gerada pelo código 1 e junta as informações do complemento básico do SICOR. Essa base contém
+ informações adicionais apenas para o universo do crédito subsidiado, incluindo o município da operação. A base gerada
+ por esse código é a “sicor_main_2013_XXXX_basic_complement.Rds”, onde XXXX é o ano mais recente.
+
+ - OBS 1: Serão incluídos outros scripts para fazer a limpeza das demais bases complementares e eventualmente adicionar 
+ tabelas de domínio auxiliares na base principal.
+
+ - OBS 2: Os dados precisam ser checados para ver se estão de acordo com o que consta na Matriz de Dados do Crédito Rural do BCB,
+ disponível aqui: https://www.bcb.gov.br/estabilidadefinanceira/micrrural

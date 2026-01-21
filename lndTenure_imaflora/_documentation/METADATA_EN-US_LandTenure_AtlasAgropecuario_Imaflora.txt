@@ -1,0 +1,59 @@
+--====================================================================================--
+## 					METADATA                                      ##
+##										      ##
+## 				   Brazilian Land Tenure			      ##
+--====================================================================================--
+File Name: rg_xx_malhaFundiaria_landTenure_20xx_imaflora_sirgas.shp
+Date: 20xx
+Type: Vector
+Quality: Multiscale
+Datum: SIRGAS 2000
+EPSG: 4674
+Source: Atlas Agropecuário (www.imaflora.org/atlasagropecuario) 
+
+Authors: Imaflora, GeoLab (ESALQ/USP), Royal Institute of Technology in Stockholm (KHT) e Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (IF/SP) 
+
+Description: This georeferenced database covers the entire Brazilian territory, offering an open and public picture of all public and private land holdings in Brazil.
+
+Form of citation: FREITAS, F. L. M.; GUIDOTTI, V.;  SPAROVEK, G.; HAMAMURA, C. Nota técnica: Malha fundiária do Brasil, v.1812. In: Atlas - A Geografia da Agropecuária Brasileira, 2018. 
+--====================================================================================--
+## 				  Variables description			             ##
+--====================================================================================--
+id_imovel = Primary Key 
+fonte = Source of rural property geometry
+classe = Classify the rural property in private or public
+		Terra pública = Public land
+		Terra privada = Private land
+		Urbano, água e transporte = Urban areas, water bodies ans transportation network
+subclasse = Classify the rural property according to datasource
+		Água = Water bodies 
+		Área militar = Military areas
+		Assentamento rural = Rural settlements
+		CAR poor = CAR properties with more than 5% of overlapping areas with neighbours
+		CAR premium = CAR properties with less than 5% of overlapping areas with neighbours
+		Florestas tipo B = Undesignated public forests
+ 		SIGEF = Private properties registered in INCRA systems SIGEF/SNCI
+		Terra indígena homologada = Homologated indigenous land
+		Terra indígena não homologada = Non-homologated Indigenous land
+		Terra legal não titulado = Undesignated lands from Terra Legal Program 
+		Terra legal titulado = Private properties from Terra Legal Program 
+		Terra Quilombola = Quilombola lands
+		Território comunitário = Communitary lands
+		Transporte = Transportation network 
+		UC Proteção Integral  = Full Protection Conservation Unit
+		UC Uso Sustentável = Sustainable Use Conservation Unit
+		Urbano = Urban areas
+area_orig = Polygon original area
+area_final = Polygon fnial area after resolution overlapping areas
+cd_mun = IBGE Municipalaity key / 5570 IDs
+nm_mun = Municipality name / 5570 IDs
+nm_micro = Microregion name/ 558 IDs
+nm_meso = Mesoregion name/ 137 IDs
+nm_regiao = Region names/ 5 IDs
+nm_bioma = Name of the most representative biome where the rural property is inserted
+tamanho = Rural properties size
+		Pequeno = Small rural property (<= 4 fiscal modules)
+		Médio = Medium rural property (area between 4 and 15 fiscal modules)
+		Grande = Large rural property (> 15 fiscal modules)
+		NA = Public and non-designated lands
+nome = Filed with teh name of the polygon according to the datasource

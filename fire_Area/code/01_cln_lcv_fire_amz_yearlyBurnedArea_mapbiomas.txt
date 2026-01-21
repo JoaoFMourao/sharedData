@@ -1,0 +1,243 @@
+/**
+* @description
+*    calculate area (in km2) of each category from fire mapbiomas collection 1.0 (annual burned coverage) by amazon biome muni shapefile (path: 'H:/CLARISSA/CDR/built/administrative/territorialDivision/amazonBiome/muni') 
+* 
+* @author
+*    Patrick Aleixo
+* 
+* @date
+*    Dec 2022
+*/
+
+
+// runtime: 3h-4h
+
+
+
+// Asset mapbiomas (to know the name of collection look 'users/mapbiomas/user-toolkit')
+var asset = "projects/mapbiomas-workspace/public/collection6/mapbiomas-fire-collection1-annual-burned-coverage-1";
+
+// Asset of regions for which you want to calculate statistics (to run is need to change users name 'aleixobraziliano' and upload shapefile in GEE - look 'upload a shapefile.pdf' in 'CPI/Canal de Equipe - Documentos/Brazil_Conservation/codingData_help/mapbiomasInvestigation')
+var assetTerritories = "users/aleixobraziliano/blt_adm_trtDv_amz_muni";
+
+
+// A list of class ids you are interested
+var App = {
+
+    options: {
+
+        className: {
+                 1: "Forest",
+                 2: "Natural Forest",
+                 3: "Forest Formation",
+                 4: "Savanna Formation",
+                 5: "Magrove",
+                 6: "Áreas Naturales Inundables - Leñosas (Bosque Inundable)",
+                 9: "Forest Plantation",
+                10: "Non Forest Natural Formation",
+                11: "Wetland",
+                12: "Grassland (Pastizal, Formación Herbácea)",
+                32: "Salt flat",
+                29: "Rocky outcrop",
+                13: "Other Non Forest Natural Formation",
+                14: "Farming",
+                15: "Pasture",
+                18: "Agriculture",
+                19: "Temporary Crops (Herbaceas - Agricultura)",
+                39: "Soy Beans",
+                20: "Sugar Cane",
+                40: "Rice",
+                41: "Mosaic of Crops",
+                46: 'Coffe',
+                47: 'Citrus',
+                48: 'Other Perennial Crops',
+                49: 'Wooded Restinga',
+                36: "Perennial Crops",
+                21: "Mosaic of Agriculture and Pasture",
+                22: "Non vegetated area",
+                24: "Urban Infrastructure",
+                30: "Mining",
+                23: "Beach and Dune",
+                25: "Other Non Vegetated Area",
+                26: "Water",
+                33: "River, Lake and Ocean",
+                37: "Artificial Water Body",
+                38: "Water Reservoirs",
+                31: "Aquaculture",
+                27: "Non Observed",
+                 0: "Non Observed"
+        }
+    }
+            }
+
+// Change the scale if you need.
+var scale = 30;
+
+// Define a list of years to export
+var years = [
+    '1985', '1986', '1987', '1988', '1989', '1990', '1991', 
+    '1992', '1993', '1994', '1995', '1996', '1997', '1998', 
+    '1999', '2000', '2001', '2002', '2003', '2004', '2005', 
+    '2006', '2007', '2008', '2009', '2010', '2011', '2012',
+    '2013', '2014', '2015', '2016', '2017', '2018', '2019', 
+    '2020'
+];
+
+
+/**
+ * 
+ */
+// Territory
+var territory = ee.FeatureCollection(assetTerritories);
+
+//map over the feature collection to edit properties of each feature
+territory = territory.map(function(feature){
+  var code = feature.get('muni_code');
+  var state = feature.get('state_uf');
+  return ee.Feature(feature.geometry(), {'id': feature.id()})
+   .set('mun_code', code)
+   .set('uf', state);
+});
+
+
+//Dictionary (make feature collection a list to get the 'system:index' associated with the muni_code)
+var dic = territory.toList(territory.size());
+
+//to export the dictionary is necessary convert the variable dic into feature collection
+dic = ee.FeatureCollection(dic);
+
+// mapbiomas image (mask the image by itself)
+var mapbiomas = ee.Image(asset).selfMask();
+
+// Image area in km2 (create a pixel area image)
+var pixelArea = ee.Image.pixelArea().divide(1000000);
+
+
+/**
+ * Convert a complex ob to feature collection
+ * @param obj 
+ */
+var convert2table = function (obj) {
+
+    obj = ee.Dictionary(obj);
+
+    //list containing all the information
+    var classesAndAreas = ee.List(obj.get('groups'));
+
+    var tableRows = classesAndAreas.map(
+        function (classAndArea) {
+            classAndArea = ee.Dictionary(classAndArea);
+
+            //create 'column' to put the information about the class
+            var classId = classAndArea.get('class');
+
+            //create 'column' to put the information about the area of each class
+            var area = classAndArea.get('sum');
+
+            //set feature´s class and area
+            var tableColumns = ee.Feature(null)
+                .set('class', classId)
+                .set('area', area);
+
+            return tableColumns;
+        }
+    );
+
+    return ee.FeatureCollection(ee.List(tableRows));
+};
+
+/**
+ * Calculate area crossing a cover map (deforestation, mapbiomas)
+ * and a region map (states, biomes, municipalites)
+ * @param image 
+ * @param territory 
+ * @param geometry
+ */
+var calculateArea = function (image, territory, geometry) {
+
+    //here we apply the grouped reducer - sum reducer - to get the area of each class
+    var reducer = ee.Reducer.sum().group(1, 'class').group(1, 'territory');
+
+    //construct a composite image where the first band is the pixel's area, the second band has the territory information and the third band has the class information
+    var territotiesData = pixelArea.addBands(territory).addBands(image)
+        .reduceRegion({
+            reducer: reducer,
+            geometry: geometry,
+            scale: scale,
+            maxPixels: 1e12 //if your new pixel is too big, increase this value (the default maximum number of pixels in reduceRegion() is 10 million)
+        });
+
+    //list containing the calculated areas for each class
+    territotiesData = ee.List(territotiesData.get('groups'));
+
+    //convert a complex ob to feature collection by applying the function 'convert2table'
+    var areas = territotiesData.map(convert2table);
+
+    //flatten the collection of feature collections into a single feature collection
+    areas = ee.FeatureCollection(areas).flatten();
+
+    return areas;
+};
+
+
+var areas = years.map(
+    function (year) {
+
+        //select each band from mapbiomas (to know the name of the band - e.g 'burned_coverage_' - is necessary the comand 'print(mapbiomas);')
+        var image = mapbiomas.select('burned_coverage_' + year);
+
+        //applying the function 'calculateArea'
+        var areas = territory.map(
+            function (feature) {
+                return calculateArea(
+                    image, //@param image
+                    ee.Image().int64().paint({
+                        'featureCollection': ee.FeatureCollection(feature)
+                    }), //@param territory
+                    feature.geometry() //@param geometry
+                );
+            }
+        );
+
+        areas = areas.flatten();
+
+        // set additional properties
+        areas = areas.map(
+            function (feature) {
+              
+             //applying the name of 'className' (lulc) to the number
+             var className = ee.Dictionary(App.options.className)
+                                    .get(ee.Number(feature.get('class')));
+                
+              return feature
+                    .set('year', year)
+                    .set('class_name', className);
+            }
+        );
+
+        return areas;
+    }
+);
+
+//flatten the collection of feature collections into a single feature collection
+areas = ee.FeatureCollection(areas).flatten();
+
+
+//Export the featureCollection (table) - 'areas' - as a CSV file to your Google Drive account.
+Export.table.toDrive({
+    collection: areas,
+    selectors: ['system:index', 'area','class','class_name','year'],
+    description: '01_cln_lcv_fire_amz_yearlyBurnedArea_mapbiomas', // change description if you need 
+    folder: 'fire-EXPORT', // change folder if you need 
+    fileFormat: 'CSV'
+});
+
+
+//Export the featureCollection (table) - 'dictionary' - as a CSV file to your Google Drive account.
+Export.table.toDrive({
+    collection: dic,
+    selectors: ['system:index','id','uf','mun_code'],
+    description: 'cln_lcv_fire_amz_yearlyBurnedArea_mapbiomas_dic', // change description if you need 
+    folder: 'dic-EXPORT', // change folder if you need 
+    fileFormat: 'CSV'
+});

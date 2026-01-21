@@ -1,0 +1,6 @@
+NOTES: VISIT FROM MARCOS ADAMI, JUN/06-08/2018
+
+*** PRODES MASK SHIFT
+[see more details in PRODES subdir]
+
+> DETER-B started using new mask in 2015 (fuzzy) -- still discussing full extent of mask shift consequences for DETER monitoring

@@ -1,0 +1,18 @@
+Painel do Orçamento Geral da União - SIOP, Sistema Integrado de Planejamento e Orçamento
+
+Atualização: 17/08/2023
+
+
+Contém dados de planejamento e orçamento do governo federal a partir do ano 2000 até 2023.
+
+A amostra adicionada a pasta raw contém apenas o intervalo de anos de 2012 até 2022 e retiramos o detalhamento por Natureza de Despesa.
+
+
+
+FONTE:https://www1.siop.planejamento.gov.br/QvAJAXZfc/opendoc.htm?document=IAS%2FExecucao_Orcamentaria.qvw&host=QVS%40pqlk04&anonymous=true&sheet=SH06
+
+Código:
+
+  1 - Visa padronizar as colunas e principalmente separar os códigos (digitos númericos de identificação) de cada variável da descrição dos códigos.
+  2 - retirar acentos de variáveis que serão analisadas descritivamente
+  3 - filtro para janela de anos 2012 - 2020

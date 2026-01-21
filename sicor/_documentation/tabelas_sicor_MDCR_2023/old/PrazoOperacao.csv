@@ -1,0 +1,9 @@
+#CODIGO_FINALIDADE,FINALIDADE,CODIGO_ATIVIDADE,ATIVIDADE,PRAZO_MINIMO,PRAZO_MAXIMO
+"2","Custeio","1","Agrícola",2,7670
+"2","Custeio","2","Pecuário(a)",2,7670
+"3","Investimento","1","Agrícola",2,9135
+"1","Comercialização","2","Pecuário(a)",2,3660
+"1","Comercialização","1","Agrícola",2,3660
+"3","Investimento","2","Pecuário(a)",2,9135
+"4",,"1","Agrícola",2,4758
+"4",,"2","Pecuário(a)",2,4758

@@ -1,0 +1,20 @@
+# BRAZILIAN ROADS
+# files: shapefile (original layer name 'Rodovias_Segmentos_Homogeneos')
+# content: roads (spatial lines data frame); Brazil (extent); 2010 (year of reference)
+# source: PNLT (Plano Nacional de Logistica e Transportes, Ministerio dos Transportes)
+# available at: http://pnlt.imagem-govfed.opendata.arcgis.com/datasets/b6584a19e15e447480c160a4a49610ff_0
+# raw data downloaded on: MAR/30/2016
+# CRS: [undocumented, but obtained from proj4string] LongLat (coordinate system), WGS84 (datum), not projected
+
+# files: shapefile (original layer name 'snv_201811A')
+# content: roads (spatial lines data frame); Brazil (extent); 2018 (year of reference)
+# source: DNIT (Departamento Nacional de Infraestrutura de Transportes)
+# available at: http://servicos.dnit.gov.br/dnitcloud/index.php/s/oTpPRmYs5AAdiNr?path=%2FBases%20Geometricas%20(SHP)
+# raw data downloaded on: FEB/22/2019
+# CRS: [undocumented, but obtained from proj4string] LongLat (coordinate system), GRS80(datum), not projected
+
+#202304 file
+# avaliable at: https://servicos.dnit.gov.br/dnitcloud/index.php/s/oTpPRmYs5AAdiNr?path=%2FSNV%20Publica%C3%A7%C3%A3o%20(2022%20-%20Atual)%20(ZIP)
+# content: roads (spatial lines data frame); Brazil (extent); 202304 (year of reference)
+# How to download: click on the latest file avaliable
+# Some things you should know before 

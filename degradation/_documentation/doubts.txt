@@ -1,0 +1,12 @@
+DEGRADATION - INPE - DOUBTS
+
+** class_name categories 
+
+* why it vary so much? 
+
+* what blowdown means?
+
+* what is the difference between QUEIMADURA and CICATRIZ_QUEIMADA and CICATRIZ_INCENDIO?
+
+
+** degrad 2015 and 2016 is related to DETER-B?

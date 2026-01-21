@@ -1,0 +1,14 @@
+# BRAZILIAN PROTECTED AREAS
+# content: protected areas ["unidades de conservacao"] (polygons data frame), Brazil (extent), 2020 (year of reference)
+# source: Cadastro Nacional de Unidades de Conservacao (CNUC) / Ministerio do Meio Ambiente (MMA)
+# where, what we get, what are each of the files (pol, pt)
+# available at: https://dados.gov.br/dados/conjuntos-dados/unidadesdeconservacao
+# raw data downloaded on: JAN/13/2025
+# web archived at: not able to archive (error - live page is not available)
+raw data archived on: -
+# CRS: LongLat(CRS - assumed, as metadata contains no CRS), SAD69 (datum), not projected
+
+
+#there is information on more conservation units here, but they are not accompanied by a shapefile or equivalent. Therefore, we don not have the spatial information on around 500 conservation units
+		http://dados.mma.gov.br/dataset/unidadesdeconservacao
+The dictionary in this folder is with respect to this data, not the one beingused

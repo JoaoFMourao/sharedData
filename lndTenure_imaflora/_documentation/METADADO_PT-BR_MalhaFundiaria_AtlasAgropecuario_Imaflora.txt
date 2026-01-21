@@ -1,0 +1,60 @@
+--====================================================================================--
+## 					METADADOS                                     ##
+##										      ##
+## 				  Malha Fundiária do Brasil			      ##
+--====================================================================================--
+Nome Arquivo: rg_xx_malhaFundiaria_landTenure_20xx_imaflora_sirgas.shp
+Data: 20XX
+Formato: vetor - shapefile
+Qualidade: Multiescala
+Datum: SIRGAS 2000
+EPSG: 4674
+Fonte: Atlas Agropecuário (www.imaflora.org/atlasagropecuario) 
+
+Autores: Imaflora, GeoLab (ESALQ/USP), Royal Institute of Technology in Stockholm (KHT) e Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (IF/SP) 
+
+Descricao: A Malha Fundiária do Brasil utiliza bases de dados georreferenciadas, cobrindo a totalidade do território brasileiro 
+e oferecendo aberta e publicamente uma visão do conjunto das terras públicas e dos imóveis privados do país.
+
+Forma de citação: FREITAS, F. L. M.; GUIDOTTI, V.;  SPAROVEK, G.; HAMAMURA, C. Nota técnica: Malha fundiária do Brasil, v.1812. In: Atlas - A Geografia da Agropecuária Brasileira, 2018. 
+--====================================================================================--
+## 				Descrição das variaveis			             ##
+--====================================================================================--
+id_imovel = Chave primária; 
+fonte = Fonte da geometria do imóvel; 
+classe = Classifica o imóvel em terra pública ou privada; 
+		Terra pública = Terra pública; 
+		Terra privada = Terra privada; 
+		Urbano, água e transporte = Áreas urbanas, água e transporte; 
+subclasse = Classifica o imóvel de acordo com a fonte do dado 	
+		Água = Agua, corpos d'agua;
+		Área militar = áreas militares;
+		Assentamento rural = assentamentos rurais;
+		CAR poor = imóveis do CAR com mais de 5% de sobreposição com seus vizinhos;
+		CAR premium = imóveis do CAR com menos de 5% de sobreposição com seus vizinho;
+		Florestas tipo B = Florestas públicas não destinadas;
+		SIGEF = imóveis privados registrados nos sistemas SIGEF/SNCI do INCRA;
+		Terra indígena homologada = terra indígena homologada;
+		Terra indígena não homologada = terra indígena não homologada;
+		Terra legal não titulado = terra legal não titulado;
+		Terra legal titulado = terra legal titulado;
+		Terra quilombola = terras quilombolas;
+		Território comunitário = territórios comunitários;
+		Transporte = malha de transportes;
+		UC Proteção Integral = unidade de conservação de proteção integral; 
+		UC Uso Sustentável = unidade de conservação de uso sustentável;
+		Urbano = áreas urbanas
+area_orig = Área original do polígono;
+area_final = Área final do após limpeza das sobreposições;
+cd_mun = Geocódigo do município do IBGE
+nm_mun = Nome do município
+nm_micro = Nome da microregião
+nm_meso = Nome da mesoregião
+nm_regiao = Nome da região
+nm_bioma = Nome do bioma mais representativo do imóvel
+tamanho = Tamanho das propriedades provadas
+		Pequeno = Pequeno imóvel rural (<= 4 módulos fiscais)
+		Médio = Médio imóvel rural (área entre 4 e 15 módulos fiscais)
+		Grande = Grande imóvel rural (> 15 módulos fiscais)
+		NA = Terras públcas e não destinadas
+nome = Campo trazendo nome do polígono, de acordo com a fonte original do dado
