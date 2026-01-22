@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: FGV Clima Website
+    url: https://clima.fgv.br
+    about: Visit our website for more information about FGV Clima
+  - name: General Questions
+    url: mailto:clima@fgv.br
+    about: Email us for general questions not related to bugs or feature requests

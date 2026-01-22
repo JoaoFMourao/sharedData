@@ -1,3 +1,118 @@
+# =============================================================================
+# FGV Clima Research Repository - .gitignore
+# =============================================================================
+
+# =============================================================================
+# DATA FILES (Large files should not be in git)
+# =============================================================================
+
+# Tabular data
+*.csv
+*.xlsx
+*.xls
+*.parquet
+*.feather
+*.arrow
+*.dta
+*.sav
+*.sas7bdat
+
+# Geospatial data
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.qpj
+*.gpkg
+*.geojson
+*.kml
+*.kmz
+*.gdb/
+
+# Raster data
+*.tif
+*.tiff
+*.nc
+*.nc4
+*.hdf
+*.hdf5
+*.h5
+*.grib
+*.grib2
+*.img
+*.asc
+
+# Compressed files
+*.zip
+*.tar
+*.tar.gz
+*.gz
+*.7z
+*.rar
+
+# =============================================================================
+# KEEP DIRECTORY STRUCTURE
+# =============================================================================
+
+# But keep .gitkeep files
+!.gitkeep
+!**/.gitkeep
+
+# =============================================================================
+# PYTHON
+# =============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# mypy
+.mypy_cache/
+
+# =============================================================================
+# R
+# =============================================================================
+
 # History files
 .Rhistory
 .Rapp.history
@@ -25,7 +140,7 @@
 vignettes/*.html
 vignettes/*.pdf
 
-# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+# OAuth2 token
 .httr-oauth
 
 # knitr and R markdown default cache directories
@@ -47,3 +162,121 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# renv
+renv/library/
+renv/local/
+renv/staging/
+
+# =============================================================================
+# EDITORS AND IDEs
+# =============================================================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm / IntelliJ
+.idea/
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+
+# =============================================================================
+# OPERATING SYSTEM
+# =============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# =============================================================================
+# SECRETS AND CREDENTIALS
+# =============================================================================
+
+# Environment files
+.env
+.env.local
+.env.*.local
+*.env
+
+# API keys and credentials
+credentials.json
+secrets.json
+*.pem
+*.key
+*.crt
+
+# AWS
+.aws/
+
+# Google Cloud
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+
+# =============================================================================
+# PROJECT-SPECIFIC
+# =============================================================================
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Backup files
+*.bak
+*.backup
+
+# Output files (can be large)
+# Keep in results/ but ignore very large outputs
+projects/*/results/**/*.pdf
+projects/*/results/**/*.png
+projects/*/results/**/*.jpg
+projects/*/results/**/*.svg
+!projects/*/results/**/.gitkeep
+
+# Reports (final documents)
+projects/*/reports/**/*.pdf
+projects/*/reports/**/*.docx
+!projects/*/reports/**/.gitkeep
+
+# =============================================================================
+# EXCEPTIONS - FILES TO KEEP
+# =============================================================================
+
+# Keep example/sample data files
+!**/examples/*.csv
+!**/sample_data/*.csv
+!**/test_data/*.csv
+
+# Keep small reference files
+!data-hub/**/metadata.json
+!data-hub/**/README.md
