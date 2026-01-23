@@ -1,8 +1,0 @@
-#CODIGO,DESCRICAO
-"01","Cadastramento Indevido"
-"02","Duplicidade de Operação"
-"03","Desistência do Financiamento verificada antes da liberação da primeira parcela do crédito"
-"05","Falta de liberação de recursos"
-"66","Exclusão por recomposição via COR0004"
-"67","Cancelamento de exclusão via COR0004"
-"06","Operação sem lista de cooperados/integrados"
