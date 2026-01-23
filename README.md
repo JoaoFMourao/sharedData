@@ -98,14 +98,6 @@ Gestão de projetos > Técnico > 05-Base de dados
 
 ---
 
-## Standards
-
-- **CRS:** SIRGAS 2000 (EPSG:4674)
-- **Municipal codes:** IBGE 7-digit
-- **Language:** R
-
----
-
 ## Contact
 
 - **FGV Clima**: https://clima.fgv.br
