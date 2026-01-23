@@ -11,6 +11,7 @@ sharedData/
 │   │   ├── epe/        # Energy data (EPE)
 │   │   ├── finbra/     # Municipal finances
 │   │   ├── ons/        # National Grid Operator
+│   │   ├── prodes/     # Deforestation data (INPE)
 │   │   ├── rais/       # Labor market data
 │   │   └── secex/      # Foreign trade data
 │   │
@@ -84,6 +85,7 @@ Gestão de projetos > Técnico > 05-Base de dados
 | **EPE** | Energy generation and consumption (11 scripts) |
 | **FINBRA** | Municipal revenues and petroleum royalties |
 | **ONS** | Power plant generation data |
+| **PRODES** | Deforestation polygons by biome (INPE) |
 | **RAIS** | Formal labor market statistics |
 | **SECEX** | Import/export trade data (2000-2024) |
 
